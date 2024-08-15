@@ -4,12 +4,15 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
+import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="shadow-xl dark:bg-gray-950 dark:shadow-none">
+    <header className="shadow-2xl">
       <nav className="container mx-auto flex items-center justify-between p-3">
-        <strong className="text-2xl">Cloudinary AI</strong>
+        <strong className="text-2xl">
+          <Link href="/"> Cloudinary AI </Link>
+        </strong>
         <div>
           <SignedOut>
             <SignInButton />

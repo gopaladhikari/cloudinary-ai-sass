@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Video" ALTER COLUMN "originalSize" SET DATA TYPE TEXT,
+ALTER COLUMN "compressedSize" SET DATA TYPE TEXT,
+ALTER COLUMN "duration" SET DATA TYPE TEXT;
