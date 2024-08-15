@@ -59,17 +59,12 @@ export async function POST(req: NextRequest) {
           },
           (error, result) => {
             if (error) reject(error);
-            else {
-              if (!result) reject("No result");
-              resolve(result as UploadSream);
-            }
+            else resolve(result);
           }
         );
         uploadStream.end(buffer);
       }
     );
-
-    console.log("response", response);
 
     const videoDb = prisma.video.create({
       data: {
@@ -81,6 +76,8 @@ export async function POST(req: NextRequest) {
         compressedSize: response.bytes,
       },
     });
+
+    return NextResponse.json(videoDb);
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   } finally {
