@@ -31,6 +31,6 @@ export async function GET() {
       }
     );
   } finally {
-    prisma.$disconnect();
+    await prisma.$disconnect();
   }
 }
