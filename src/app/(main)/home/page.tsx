@@ -19,7 +19,7 @@ function Home() {
         throw new Error(" Unexpected response format");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setError("Failed to fetch videos");
     } finally {
       setLoading(false);

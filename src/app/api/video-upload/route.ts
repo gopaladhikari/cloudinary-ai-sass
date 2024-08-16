@@ -59,6 +59,7 @@ export async function POST(req: NextRequest) {
           },
           (error, result) => {
             if (error) reject(error);
+            // @ts-expect-error - Cloudinary typings are incorrect
             else resolve(result);
           }
         );
